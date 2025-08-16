@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #00B900; /* LINEのグリーン */
+    --text-color: #333333;
+    --bg-color: #FFFFFF;
+    --light-gray-bg: #f7f7f7;
+    --border-color: #e5e5e5;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+/* --- Header / Hero --- */
+.hero {
+    background-color: var(--bg-color);
+    text-align: center;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    border-radius: 50px; /* 丸みのあるボタン */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 185, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #00a300;
+    transform: translateY(-2px);
+}
+
+/* --- General Section Styling --- */
+section {
+    padding: 5rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.about-section {
+    background-color: var(--light-gray-bg);
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* --- Features Section --- */
+.features-section {
+    background-color: var(--bg-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
+
+.feature-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.feature-item h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Products Section --- */
+.products-section {
+    background-color: var(--light-gray-bg);
+}
+
+.product-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 3rem;
+    flex: 1;
+}
+
+.product-info h3 {
+    font-size: 1.8rem;
+}
+
+.price {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.buy-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #00a300;
+    transform: translateY(-2px);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
